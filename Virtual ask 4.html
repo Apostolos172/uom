@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width">
+		<meta charset="UTF-8">
+		<title>Virtual ask 4</title>
+		<link href="https://fonts.googleapis.com/css?family=Tangerine&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&display=swap" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+		<style>
+html{
+	width:100%;
+	height:100%;
+	background-image: linear-gradient(to bottom right, blue, LightSalmon, AliceBlue);
+	background-image: linear-gradient(to bottom right, yellow, LightSalmon, brown, red, purple);
+	font-size:16px;
+	background-attachment:fixed;
+}
+
+em{
+	color:blue;
+	font-weight:bold;
+	font-size:2rem;
+	font-family: 'EB Garamond', serif;
+}
+
+.instructions{
+	color:purple;
+}
+
+.main span, .main select{
+	font-family: 'Tangerine', cursive;
+	font-size:2.5rem;
+}
+
+.main option{
+	font-size:1rem;
+}
+
+#chart_div{
+	font-size:1rem;
+}
+
+button{
+	background-color:#FFE5CC;
+	margin:3px;
+}
+
+button:hover{
+	border-radius:20px;
+	transition:0.5s;
+	cursor:pointer;
+}
+
+table{
+	margin: 5px;
+	text-align:center;
+}
+
+table, td, tr, th{
+	border: 1px solid black;
+	padding: 3px;
+}
+
+td{
+	display:inline-block;
+	margin:0.5px;
+}
+
+select{
+	border-top-left-radius: 20px;
+}
+
+input{
+	 border-top-right-radius: 50px 20px;
+	 padding:5px;
+	 margin:3px;
+	 width:200px;
+}
+
+button{
+	margin:6px;
+	padding:5px;
+}
+
+.header{
+	text-align:center;
+	text-shadow: 2px 2px brown;
+	font-family: 'Tangerine', cursive;
+	font-size:5rem;
+}
+
+.main, button, input{
+    font-family: 'IBM Plex Sans', sans-serif;
+	font-size:1.5rem;
+}
+
+.aside{
+	text-align:center;
+}
+
+.footer, .aside{
+	font-family: 'EB Garamond', serif;
+	font-size:2rem;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.grid-container{
+	display:grid;
+	grid-template-columns:25% 25% 25% 25%;
+	grid-gap:10px;
+	padding:1vw;
+	margin-Left:0;
+	margin-top:0;
+	margin-right:2vw;
+	margin-right:30px;
+}
+
+.header{grid-column:1/4;}
+.aside{grid-column:4/5;}
+.main{grid-column:1/5;text-align:center;}
+.footer{grid-column:1/5;}
+
+@media only screen and (min-width: 500px) {
+#vertical_table{display:none;}
+td{min-width:90px;}
+td:first-child{
+	min-width:200px;
+	font-weight:bold;
+}
+}
+
+@media only screen and (max-width: 500px) {
+.header{grid-column:1/5;}
+.aside{grid-column:1/5;}
+.main{grid-column:1/5;}
+.footer{grid-column:1/5;}
+#horizontal_table{display:none;}
+table{width:100%;}
+td{width:47%;}
+tr:first-child > td{
+	font-weight:bold;
+	min-height:70px;}
+}
+
+.header, .main, .aside, .footer{
+	background-color:rgba(87, 191, 133, 0.8);
+	background-color:rgba(200, 248, 229, 0.83);
+	padding:20px;
+	transition:1s;
+}
+
+.header:hover, .main:hover, .aside:hover, .footer:hover{
+	background-color:rgba(87, 191, 133, 1);
+	background-color:rgba(200, 248, 229, 1);
+}
+		</style>
+	</head>
+	<body class="grid-container">
+		<header class="header">
+			Virtual ask 4
+		</header>
+		<aside class="aside">
+			<a href="https://el.wikipedia.org/wiki/%CE%98%CE%B5%CF%89%CF%81%CE%AF%CE%B1_%CF%80%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%AF%CE%B1%CF%82" rel="noreferrer noopener" target="_blank">Θεωρία πληροφορίας</a>
+		</aside>
+		<main class="main">
+			<div>
+				<h2>Υπολογισμός του μέγιστου ρυθμού μετάδοσης <span>R</span> για εύρος τιμών της απόστασης <span>d</span></h2>
+				<p class="instructions">
+				Συμπήρωσε όλα τα πεδία με τα αντίστοιχα μεγέθη, δίνοντας και εύρος για <span>d</span> (σε <span>m</span>), ώστε με βάση αυτό
+				να υπολογιστεί ο μέγιστος ρυθμός μετάδοσης <span>R</span> σε κάθε περίπτωση.<br>
+				Ενδεικτικά υπάρχουν κάποιες προσυμπληρωμένες τιμές, οι οποίες μπορούν να τροποποιηθούν.
+				</p>
+				<br>
+				<form>
+				<label><em>Ι</em>σχύς σήματος από τον πομπό εκπομπής <span>P<sub>Transmitter</sub></span> σε 
+				<span><select><option>Watt</option><option class="mWatt" selected>mWatt</option></select></span> : <input id="PTransmitter" type="text"></label><br>
+				<label><em>Α</em>πόσταση μέτρησης της ισχύος εκπομπής <span>d<sub>0</sub></span> σε <span>m</span> : <input id="d0" type="text"></label><br>
+				<label><em>Ι</em>σχύς θορύβου <span>N</span> σε 
+				<span><select><option>Watt</option><option class="mWatt" selected>mWatt</option></select></span> : <input id="N" type="text"></label><br>
+				<label><em>Μ</em>ικρότερη συχνότητα λειτουργίας του καναλιού <span>f<sub>min</sub></span> σε <span>GHz</span> : <input id="fmin" type="text"></label><br>
+				<label><em>Μ</em>εγαλύτερη συχνότητα λειτουργίας του καναλιού <span>f<sub>max</sub></span> σε <span>GHz</span> : <input id="fmax" type="text"></label><br>
+				<label><em>Α</em>ρχική τιμή για την απόσταση στην οποία βρίσκεται ο δέκτης <span>d<sub>initial</sub></span> σε <span>m</span> : <input id="dinitial" type="text"></label><br>
+				<label><em>Τ</em>ελική τιμή για την απόσταση στην οποία βρίσκεται ο δέκτης <span>d<sub>final</sub></span> σε <span>m</span> : <input id="dfinal" type="text"></label><br>
+				<label><em>Β</em>ήμα για τις αλλαγές της απόστασης του δέκτη από τον πομπό (κεραία) : <input id="step" type="text"></label><br>
+				</form>
+				<br>
+				<p class="instructions">
+				Πάτησε το επόμενο κουμπί για να πάρεις τα αποτελέσματα τόσο σε πίνακα όσο και σε μορφή διαγράμματος
+				</p>
+				<br>
+				<button id="calculate">Υπολόγισε και δημιούργησε γράφημα</button>
+				<button id="deleteResults">Καθάρισε τα αποτελέσματα</button>
+				<button id="deleteFields">Επανάφερε τις ενδεικτικές τιμές στα πεδία</button>
+				<br><br>
+				<table>
+					<tbody id="horizontal_table">
+					<tr><th>d (m)</th></tr>
+					<tr><th>max R (Mbps)</th></tr>
+					</tbody>
+					<tbody id="vertical_table">
+					<tbody>
+				</table>
+				<br>
+				<div id="chart_div"></div>
+			</div>
+			
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script>
+
+	"use strict";
+	
+	google.charts.load('current', {'packages':['line']});
+	
+	var mWatt = window.document.getElementsByClassName("mWatt");
+	var width = window.screen.width;
+	initialize();
+	
+	(window.document.getElementById("calculate")).addEventListener("click",calculate);
+	(window.document.getElementById("deleteResults")).addEventListener("click",clearResults);
+	(window.document.getElementById("deleteFields")).addEventListener("click",clearFields);
+	
+	//"αρχικοποίηση" σελίδας, ενδεικτικές τιμές σε μονάδες μέτρησης και πεδία
+	function initialize()
+	{
+		for(var i=0; i<mWatt.length; i++)
+			mWatt[i].selected = true;
+		window.document.getElementById("PTransmitter").value = 100;
+		window.document.getElementById("d0").value = 1; 
+		window.document.getElementById("N").value = 0.001; 
+		window.document.getElementById("fmin").value = 2.4; 
+		window.document.getElementById("fmax").value = 2.425; 
+		window.document.getElementById("dinitial").value = 10; 
+		window.document.getElementById("dfinal").value = 100; 
+		window.document.getElementById("step").value = 10;
+	}
+	
+	//συνάρτηση επιστροφής των δεδομένων των απαραίτητων για τους υπολογισμούς από τα πεδία στην html σαν array
+	function getData()
+	{
+		var PTransmitter = parseFloat((parseFloat(window.document.getElementById("PTransmitter").value)).toFixed(2));
+		if(!mWatt[0].selected)
+			PTransmitter = WatttomWatt(PTransmitter);
+		var d0 = parseFloat((parseFloat(window.document.getElementById("d0").value)).toFixed(2)); 
+		var N = parseFloat((parseFloat(window.document.getElementById("N").value)).toFixed(6));
+		if(!mWatt[1].selected)
+			N = WatttomWatt(N);
+		var fmin = parseFloat((parseFloat(window.document.getElementById("fmin").value)).toFixed(4)); 
+		var fmax = parseFloat((parseFloat(window.document.getElementById("fmax").value)).toFixed(4)); 
+		var dinitial = parseFloat((parseFloat(window.document.getElementById("dinitial").value)).toFixed(2)); 
+		var dfinal = parseFloat((parseFloat(window.document.getElementById("dfinal").value)).toFixed(2)); 
+		var step = parseFloat((parseFloat(window.document.getElementById("step").value)).toFixed(2)); 
+		
+		var data = [PTransmitter, d0, N, fmin, fmax, dinitial, dfinal, step];
+		
+		return data;
+	}
+	
+	//συνάρτηση μετατροπής τιμής από Watt σε mWatt
+	function WatttomWatt(Watt)
+	{
+		var mWatt = Watt*Math.pow(10,3);
+		return mWatt;
+	}
+	
+	//συνάρτηση υπολογισμού για διάστημα τιμών d σε m με εκτύπωση αποτελεσμάτων σε πίνακα
+	function calculate()
+	{
+		clearResults();
+		
+		var data = getData();
+		
+		var PTransmitter = data[0];
+		var d0 = data[1];
+		var N = data[2];
+		var fmin = data[3];
+		var fmax = data[4];
+		var dinitial = data[5];
+		var dfinal = data[6];
+		var step = data[7];
+		
+		var dArray = [];
+		for(var i=dinitial; i<=dfinal; i+=step)
+			dArray.push(i);
+		
+		var B = (fmax-fmin)*Math.pow(10,3);
+		//console.log(dinitial,dfinal,step);
+		var PReceiverArray = calculatePReceiverForRanged(PTransmitter, d0, dinitial, dfinal, step);
+		var CapacityArray = calculateCapacityForRangeS(B, PReceiverArray, N);
+		
+		if(width<=500)
+		{
+			var vertical_table = window.document.getElementById("vertical_table");
+			var rows = -1;
+		
+			var data = ["d(m)","max R (Mbps)"];
+			addArow(vertical_table, rows++, data);
+
+			for(var i=0; i<dArray.length; i++)
+			{
+				var resultsForOneValue = [dArray[i],CapacityArray[i]];
+				addArow(vertical_table,rows++,resultsForOneValue)
+			}	
+			
+			drawChart(300,'',dArray,CapacityArray);
+		}
+		else
+		{
+		
+			var row1data = [];
+			for(var i=0; i<dArray.length; i++)
+				row1data.push(dArray[i].toString());
+			row1data.unshift("d (m)");
+			
+			var row2data = [];
+			for(i=0; i<CapacityArray.length; i++)
+				row2data.push(CapacityArray[i].toString());
+			row2data.unshift("max R (Mbps)");
+			
+			addArow(horizontal_table, 0, row1data);
+			addArow(horizontal_table, 1, row2data);
+		
+			drawChart(900,"d(m):οριζόντιος άξονας, max R:κάθετος άξονας",dArray,CapacityArray);
+		}
+		
+			
+	}
+	
+	//συνάρτηση υπολογισμού της ισχύος σήματος στον δέκτη του καναλιού 
+	function calculatePReceiver(PTransmitter, d0, d)
+	{
+		var PReceiver = PTransmitter*Math.pow((d0/d),2);
+		return parseFloat(PReceiver.toFixed(2));
+	}
+	
+	//συνάρτηση υπολογισμού της ισχύος σήματος στον δέκτη του καναλιού για range τιμών
+	function calculatePReceiverForRanged(PTransmitter, d0, dinitial, dfinal, step)
+	{
+		var PReceiverArray = [];
+		//console.log(dinitial,dfinal,step);
+		for(var i=dinitial; i<=dfinal; i+=step)
+		{
+			var currentPReceiver = calculatePReceiver(PTransmitter, d0, i);
+			PReceiverArray.push(currentPReceiver);
+		}
+		return PReceiverArray;
+	}
+	
+	//συνάρτηση υπολογισμού της χωρητικότητας του καναλιού από τον νόμο του Shannon
+	function calculateCapacity(B, S, N)
+	{
+		var C = B*Math.log2(1+S/N);
+		return parseFloat(C.toFixed(2));
+	}
+	
+	//συνάρτηση υπολογισμού της χωρητικότητας του καναλιού από τον νόμο του Shannon για range τιμών
+	function calculateCapacityForRangeS(B, Sarray, N)
+	{
+		var Carray = [];
+		for(var i=0; i<Sarray.length; i++)
+		{
+			var c = calculateCapacity(B, Sarray[i], N);
+			Carray.push(c);
+			//console.log(B, Sarray[i], N, c);
+		}
+		return Carray;
+	}
+	
+	//συνάρτηση απεικόνισης αποτελεσμάτων σε διάγραμμα
+	function drawChart(widthOfGraph,subtitle,dArray,CapacityArray) 
+	{
+
+		var data = new google.visualization.DataTable();
+		data.addColumn('number', 'd (m)');
+		data.addColumn('number', 'max R');
+		  
+		var table = [];
+		for(var i=0; i<dArray.length; i++)
+		{
+			var resultsForOneValue = [dArray[i],CapacityArray[i]];
+			table.push(resultsForOneValue);
+		}	
+
+		data.addRows(table);
+
+		var options = {
+			chart: {
+			title: "d(m) με max R",
+			subtitle: subtitle
+			},
+			width: widthOfGraph,
+			height: 500
+		};
+
+		var chart = new google.charts.Line(document.getElementById('chart_div'));
+		chart.draw(data, google.charts.Line.convertOptions(options));
+    }
+
+	//συνάρτηση προσθήκης γραμμής σε πίνακα table(resultsElement) με τα δεδομένα να βρίσκονται στο array dataOfRow
+	function addArow(resultsElement, row, dataOfRow)
+	{
+
+		// Create an empty <tr> element and add it to the resultsElement at the position row:
+		var row = window.document.createElement("TR");
+		resultsElement.append(row);
+
+		// Insert new cells (<td> elements) at the positions of the "new" <tr> element:
+		var cellsNo = dataOfRow.length;
+		var cells = [];
+		var cell;
+		for(var i=0; i<cellsNo; i++)
+		{
+			cell = row.insertCell(i);
+			cells.push(cell);
+		}
+
+		// Add some text to the new cells:
+		for(i=0; i<cellsNo; i++)
+			cells[i].innerHTML = ""+dataOfRow[i];
+
+	}
+
+	//συνάρτηση καθαρισμού αποτελεσμάτων
+	function clearResults()
+	{
+		
+		var trs = document.getElementsByTagName("tr");
+		for(var i=0; i<trs.length; i++)
+			trs[i].innerHTML = "";
+		
+		var resultsElement = document.getElementById("vertical_table").innerHTML = "";
+		document.getElementById("chart_div").innerHTML = "";
+	}
+	
+	//επαναφορά των πεδίων στις αρχικές τους τιμές
+	function clearFields()
+	{
+		window.location.reload(); 
+		clearResults();
+	}
+
+</script>
+
+		</main>
+		<footer class="footer">
+			<span>Συστήματα επικοινωνιών 2020</span>
+		</footer>
+	</body>
+</html>

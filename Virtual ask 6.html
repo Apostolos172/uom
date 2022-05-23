@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width">
+		<meta charset="UTF-8">
+		<title>Virtual ask 6</title>
+		<link href="https://fonts.googleapis.com/css?family=Tangerine&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&display=swap" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+		<style>
+html{
+	width:100%;
+	height:100%;
+	background-image: linear-gradient(to bottom right, blue, LightSalmon, AliceBlue);
+	background-image: linear-gradient(to bottom right, yellow, LightSalmon, brown, red, purple);
+	background-image: linear-gradient(to bottom right, blue, white, purple, green);
+	font-size:16px;
+	background-attachment: fixed;
+	scroll-behavior: smooth;
+}
+
+.diagramms > div{
+	padding:10px;
+	margin:5px;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.bg1 > p, .bg2 > p, .bg3 > p, .bg4 > p{
+	color:white;
+}
+
+.bg1{
+	background-image: url("https://cdn.dpamicrophones.com/media/images/mic-university/2017/digital-sound.jpg?ext=.jpg");
+}
+
+.bg2{
+	background-image: url("https://miro.medium.com/max/1138/1*q9HhkGNr6-AQOBPw_3wCuQ.jpeg");
+}
+
+.bg3{
+	background-image: url("https://static4.arrow.com/-/media/arrow/images/820-x-410/0/0418_analog-to-digital_main.jpg");
+}
+
+.bg4{
+	background-image: url("https://www.rutronik.com/fileadmin//Rutronik/News/Knowledge/Produktmeldungen/Compressed_Analog_Digital_Graphic.jpg");
+}
+
+#sequence{
+	width:400px;
+}
+
+#order{
+	color:rgb(255,255,0);
+	font-weight:bold;
+	background-color:rgba(255,0,0,0.8);
+}
+
+.together{
+	display:inline-block;
+	width:25%;
+	margin:30px;
+}
+
+em{
+	color:blue;
+	font-weight:bold;
+	font-size:2rem;
+	font-family: 'EB Garamond', serif;
+}
+
+.instructions{
+	color:purple;
+}
+
+#title > span{
+	font-size:3.5rem;
+}
+
+.main span, .main select{
+	font-family: 'Tangerine', cursive;
+	font-size:2.5rem;
+}
+
+.main #title > span.type{
+	font-family: 'EB Garamond', serif;
+	font-size:2rem;
+}
+
+.main option{
+	font-size:1rem;
+}
+
+.chart_div{
+	font-size:1rem;
+	margin: auto;
+	width: 90%;
+}
+
+button{
+	background-color:#FFE5CC;
+	margin:6px;
+	padding:5px;
+}
+
+button:hover{
+	border-radius:20px;
+	transition:0.5s;
+	cursor:pointer;
+}
+
+select{
+	border-top-left-radius: 20px;
+}
+
+input{
+	 border-top-right-radius: 50px 20px;
+	 padding:5px;
+	 margin:3px;
+	 width:200px;
+}
+
+.header{
+	text-align:center;
+	text-shadow: 2px 2px brown;
+	font-family: 'Tangerine', cursive;
+	font-size:5rem;
+}
+
+.main, button, input{
+    font-family: 'IBM Plex Sans', sans-serif;
+	font-size:1.5rem;
+}
+
+.aside{
+	text-align:center;
+}
+
+.footer, .aside{
+	font-family: 'EB Garamond', serif;
+	font-size:2rem;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.grid-container{
+	display:grid;
+	grid-template-columns:25% 25% 25% 25%;
+	grid-gap:10px;
+	padding:1vw;
+	margin-Left:0;
+	margin-top:0;
+	margin-right:2vw;
+	margin-right:30px;
+}
+
+.header{grid-column:1/4;}
+.aside{grid-column:4/5;}
+.main{grid-column:1/5;text-align:center;}
+.footer{grid-column:1/5;}
+
+@media only screen and (max-width: 500px) {
+.header{grid-column:1/5;}
+.aside{grid-column:1/5;}
+.main{grid-column:1/5;}
+.footer{grid-column:1/5;}
+.together{
+	display:block;
+	margin:5px;
+}
+#sequence{
+	width:250px;
+}
+.diagramms > div{
+	width:100%;
+	padding:0;
+	
+}
+}
+
+.header, .main, .aside, .footer{
+	background-color:rgba(255,222,173,0.9);
+	padding:20px;
+	transition:1s;
+}
+
+.header:hover, .main:hover, .aside:hover, .footer:hover{
+	background-color:rgba(87, 191, 133, 1);
+	background-color:rgba(200, 248, 229, 1);
+	background-color:rgba(255,222,173,1);
+}
+
+		</style>
+	</head>
+	<body class="grid-container">
+		<header class="header">
+			Virtual ask 6
+		</header>
+		<aside class="aside">
+			<a href="https://en.wikipedia.org/wiki/Non-return-to-zero" rel="noreferrer noopener" target="_blank">Non-return-to-zero κωδικοποίηση</a><br>
+		</aside>
+		<main class="main">
+			
+				<h2 id="title">Τέσσερις διαφορετικές κωδικοποιήσεις, για δεδομένα <span>bits</span> 
+				που εισάγει ο χρήστης(0 ή 1), ανάλογα κάθε φορά την τεχνική κωδικοποίησης, μία από 
+				τις εξής τέσσερις: NRZ-L, NRZ-I, AMI, Pseudoternary.</h2>
+				<p class="instructions">
+				Συμπήρωσε όλα τα πεδία με τα αντίστοιχα μεγέθη, ώστε με βάση αυτά να προκύψει η 
+				κωδικοποίηση των δεδομένων <span>bits</span>.<br>
+				Ενδεικτικά υπάρχουν κάποιες προσυμπληρωμένες τιμές, οι οποίες μπορούν να τροποποιηθούν.
+				</p>
+				<p id="scrollInto"></p>
+				<br>
+				<form>
+				<p class="instructions" id="order">
+				</p>
+				<label><em>Π</em>λήθος <span>bits</span> για κωδικοποίηση : <input id="n" type="text"></label><br>
+				<label><em>Α</em>κολουθία <span>bits</span> για κωδικοποίηση : <input id="sequence" type="text"></label><br>
+				</form>
+				<br>
+				<p class="instructions">
+				Πάτησε κάποιο από τα επόμενα κουμπιά για να πάρεις τα αποτελέσματα σε μορφή διαγράμματος.
+				</p>
+				<br>
+				<button id="deleteResults">Καθάρισε τα αποτελέσματα</button>
+				<button id="deleteFields">Επανάφερε τις ενδεικτικές τιμές στα πεδία</button>
+				<br><br>
+				<div>
+				<hr>
+				<p><button id="printAll">Εμφάνισε όλα τα αποτελέσματα</button></p>
+				<p class="instructions">Η μπλε γραμμή σε κάθε διάγραμμα αποτυπώνει το μήκος ενός bit, το 
+				οποίο καταλαμβάνει στο διάγραμμα.</p>
+				<hr>
+				<p class="instructions">Εδώ φαίνονται συνολικά τα αποτελέσματα, τα οποία εμφανίζονται 
+				και παρακάτω μεμονωμένα.</p>
+				<div class="together"></div>
+				<div class="together"></div><br>
+				<div class="together"></div>
+				<div class="together"></div>
+				</div>
+				<hr>
+				<div class="diagramms">
+				<div class="bg1">
+				<p class="instructions">NRZ-L</p>
+				<p class="instructions">Πάτησε το κουμπί</p>
+				<button id="codingNRZ-L">NRZ-L</button><br><br>
+				<div class="chart_div"></div><br><br>
+				</div>
+				<div class="bg2">
+				<p class="instructions">NRZ-I</p>
+				<p class="instructions">Πάτησε το κουμπί</p>
+				<button id="codingNRZ-I">NRZ-I</button><br><br>
+				<div class="chart_div"></div><br><br>
+				</div>
+				<div class="bg3">
+				<p class="instructions">AMI</p>
+				<p class="instructions">Πάτησε το κουμπί</p>
+				<button id="codingAMI">AMI</button><br><br>
+				<div class="chart_div"></div><br><br>
+				</div>
+				<div class="bg4">
+				<p class="instructions">Pseudoternary</p>
+				<p class="instructions">Πάτησε το κουμπί</p>
+				<button id="codingPseudoternary">Pseudoternary</button><br><br>
+				<div class="chart_div"></div><br><br>
+				</div>
+				</div>
+			
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script>
+
+	"use strict";
+
+   	google.charts.load('current', {'packages':['line']});
+	
+	var chart_divs = window.document.getElementsByClassName("chart_div");
+	var together = window.document.getElementsByClassName("together");
+	
+	var width = window.screen.width;
+	initialize();
+	
+	(window.document.getElementById("codingNRZ-L")).addEventListener("click",codingNRZ_L);
+	(window.document.getElementById("codingNRZ-I")).addEventListener("click",codingNRZ_I);
+	(window.document.getElementById("codingAMI")).addEventListener("click",codingAMI);
+	(window.document.getElementById("codingPseudoternary")).addEventListener("click",codingPseudoternary);
+	(window.document.getElementById("deleteResults")).addEventListener("click",clearResults);
+	(window.document.getElementById("deleteFields")).addEventListener("click",clearFields);
+	(window.document.getElementById("printAll")).addEventListener("click",printAll);
+	var inputs = (window.document.querySelectorAll("input"));
+	for(var input of inputs)
+		input.addEventListener("focusin",function(){ clearResults(); });
+	for(var input of inputs)
+		input.addEventListener("focusout",function(){ checkValues(); });
+	
+	//"αρχικοποίηση" σελίδας, ενδεικτικές τιμές σε μονάδες μέτρησης και πεδία
+	function initialize()
+	{
+		window.document.getElementById("n").value = 5;
+		window.document.getElementById("sequence").value = 10110; 
+	}
+	
+	//συνάρτηση επιστροφής των δεδομένων των απαραίτητων για τους υπολογισμούς από τα πεδία στην html σαν array
+	function getData()
+	{
+		var n = parseFloat((parseFloat(window.document.getElementById("n").value)).toFixed(2)); 
+		var sequence = (window.document.getElementById("sequence").value); 
+						
+		var data = [n, sequence];
+		
+		return data;
+	}
+	
+	//έλεγχος ορθής συμπλήρωσης των πεδίων
+	function checkValues()
+	{
+		var data = getData();
+		
+		var n = data[0];
+		var sequence = data[1];
+		var order = window.document.getElementById("order");
+		var scrollInto = window.document.getElementById("scrollInto");
+		
+		var correct = true;
+		if(sequence.length>n)
+		{
+			order.innerHTML = "Έδωσες μεγαλύτερη ακολουθία από το πλήθος των bits. Διόρθωσε τα πεδία.";
+			correct = false;
+			scrollInto.scrollIntoView();
+		}
+		else if(sequence.length<n)
+		{
+			order.innerHTML = "Έδωσες μεγαλύτερο αριθμό bits από ότι είναι η ακολουθία. Διόρθωσε τα πεδία.";
+			correct = false;
+			scrollInto.scrollIntoView();
+		}
+		
+		return correct;
+	}
+	
+	//συνάρτηση εμφάνισης όλων των αποτελεσμάτων
+	function printAll()
+	{
+		clearResults();
+		if(checkValues())
+		{
+		(window.document.getElementById("codingNRZ-L")).click();
+		(window.document.getElementById("codingNRZ-I")).click();
+		(window.document.getElementById("codingAMI")).click();
+		(window.document.getElementById("codingPseudoternary")).click();
+		}
+	}
+	
+	//συνάρτηση κωδικοποίησης NRZ_L
+	function codingNRZ_L()
+	{
+		clearResultsForOneCalculation(chart_divs[0],together[0]);
+		if(checkValues())
+		{
+		var data = getData();
+		
+		var n = data[0];
+		var sequence = data[1];
+		
+		var end = n*10.0;
+		var x = [];
+		var y = [];
+		var up = [];
+		var down = [];
+		
+		for(var i=1; i<=n; i++)
+		{
+			var temp0 = i*10;
+			var temp1 = (i*10)+10;
+			var currentBit = sequence[i-1];
+			for(var j=temp0; j<=temp1; j+=1)
+			{
+				up.push(2);
+				down.push(-2);
+				x.push(j);
+				
+				if((currentBit.localeCompare("0"))==0)
+					y.push(1);
+				else
+					y.push(-1);
+			}
+				
+		}
+
+		var widthOfGraph = width-300;
+		var widthOfSmallGraph = 400;
+		var heightOfGraph = 600;
+		if(width<=500)
+		{
+			widthOfGraph = 300;
+			widthOfSmallGraph = 300;
+			heightOfGraph = 400;
+		}
+		
+		drawChartWith3Lines(widthOfGraph,heightOfGraph,chart_divs[0],"brown","NRZ-L",sequence,x,y,up,down,'κωδικοποιημένο σήμα');
+		drawChartWith3Lines(widthOfSmallGraph,200,together[0],"brown","NRZ-L: "+sequence,'',x,y,up,down,"");
+		}
+	}
+	
+	//συνάρτηση κωδικοποίησης NRZ_I
+	function codingNRZ_I()
+	{
+		clearResultsForOneCalculation(chart_divs[1],together[1]);
+		if(checkValues())
+		{
+		var data = getData();
+		
+		var n = data[0];
+		var sequence = data[1];
+		
+		var end = n*10.0;
+		var x = [];
+		var y = [];
+		var up = [];
+		var down = [];
+		var previousY = 1;
+		
+		for(var i=1; i<=n; i++)
+		{
+			var temp0 = i*10;
+			var temp1 = (i*10)+10;
+			var temp = previousY;
+			var currentBit = sequence[i-1];
+			for(var j=temp0; j<=temp1; j+=1)
+			{
+				up.push(2);
+				down.push(-2);
+				x.push(j);
+				
+				if((currentBit.localeCompare("1"))==0)
+				{
+					temp = (-1)*previousY;
+					y.push(temp);
+				}
+				else
+				{
+					y.push(previousY);
+				}
+			}
+			previousY = temp;
+		}
+
+		var widthOfGraph = width-300;
+		var widthOfSmallGraph = 400;
+		var heightOfGraph = 600;
+		if(width<=500)
+		{
+			widthOfGraph = 300;
+			var widthOfSmallGraph = 300;
+			heightOfGraph = 400;
+		}
+		
+		drawChartWith3Lines(widthOfGraph,heightOfGraph,chart_divs[1],"purple","NRZ-I",sequence,x,y,up,down,'κωδικοποιημένο σήμα');
+		drawChartWith3Lines(widthOfSmallGraph,200,together[1],"purple","NRZ-I: "+sequence,'',x,y,up,down,"");
+		}
+	}
+	
+	//συνάρτηση κωδικοποίησης AMI
+	function codingAMI()
+	{
+		clearResultsForOneCalculation(chart_divs[2],together[2]);
+		if(checkValues())
+		{
+		var data = getData();
+		
+		var n = data[0];
+		var sequence = data[1];
+		
+		var end = n*10.0;
+		var x = [];
+		var y = [];
+		var up = [];
+		var down = [];
+		var previous1 = 1;
+		
+		for(var i=1; i<=n; i++)
+		{
+			var temp0 = i*10;
+			var temp1 = (i*10)+10;
+			
+			var temp = previous1;
+			var currentBit = sequence[i-1];
+			for(var j=temp0; j<=temp1; j+=1)
+			{
+				up.push(2);
+				down.push(-2);
+				x.push(j);
+				
+				if((currentBit.localeCompare("0"))==0)
+				{
+					y.push(0);
+				}
+				else 
+				{
+					if(previous1==1)
+					{
+						y.push(-1);
+						temp = -1;
+					}
+					else 
+					{					
+						y.push(1);
+						temp = 1;
+					}
+				}
+			}
+			previous1 = temp;
+		}
+
+		var widthOfGraph = width-300;
+		var widthOfSmallGraph = 400;
+		var heightOfGraph = 600;
+		if(width<=500)
+		{
+			widthOfGraph = 300;
+			widthOfSmallGraph = 300;
+			heightOfGraph = 400;
+		}
+		
+		drawChartWith3Lines(widthOfGraph,heightOfGraph,chart_divs[2],'green',"AMI",sequence,x,y,up,down,'κωδικοποιημένο σήμα');
+		drawChartWith3Lines(widthOfSmallGraph,200,together[2],'green',"AMI: "+sequence,'',x,y,up,down,"");
+		}
+	}
+	
+	//συνάρτηση κωδικοποίησης Pseudoternary
+	function codingPseudoternary()
+	{
+		clearResultsForOneCalculation(chart_divs[3],together[3]);
+		if(checkValues())
+		{
+		var data = getData();
+		
+		var n = data[0];
+		var sequence = data[1];
+		
+		var end = n*10.0;
+		var x = [];
+		var y = [];
+		var up = [];
+		var down = [];
+		var previous0 = 1;
+		
+		for(var i=1; i<=n; i++)
+		{
+			var temp0 = i*10;
+			var temp1 = (i*10)+10;
+			
+			var temp = previous0;
+			var currentBit = sequence[i-1];
+			for(var j=temp0; j<=temp1; j+=1)
+			{
+				up.push(2);
+				down.push(-2);
+				x.push(j);
+				
+				if((currentBit.localeCompare("1"))==0)
+				{
+					y.push(0);
+				}
+				else 
+				{
+					if(previous0==1)
+					{
+						y.push(-1);
+						temp = -1;
+					}
+					else 
+					{					
+						y.push(1);
+						temp = 1;
+					}
+				}
+			}
+			previous0 = temp;
+		}
+
+		var widthOfGraph = width-300;
+		var widthOfSmallGraph = 400;
+		var heightOfGraph = 600;
+		if(width<=500)
+		{
+			widthOfGraph = 300;
+			widthOfSmallGraph = 300;
+			heightOfGraph = 400;
+		}
+		
+		drawChartWith3Lines(widthOfGraph,heightOfGraph,chart_divs[3],'orange',"Pseudoternary",sequence,x,y,up,down,'κωδικοποιημένο σήμα');
+		drawChartWith3Lines(widthOfSmallGraph,200,together[3],'orange',"Pseudoternary: "+sequence,'',x,y,up,down,"");
+		}
+	}
+
+	//συνάρτηση απεικόνισης πολλαπλών γραμμών (3) στο ίδιο διάγραμμα
+	function drawChartWith3Lines(widthOfGraph,heightOfGraph,div,color,title,subtitle,x,line1,line2,line3,info) 
+	{
+
+		var data = new google.visualization.DataTable();
+		data.addColumn('number', 'χρόνος');
+		data.addColumn('number', info);
+		data.addColumn('number', '');
+		data.addColumn('number', '');
+		data.addColumn('number', '');
+		
+		var lengthOfBit = [];
+		for(var i=0; i<=10; i++)
+			lengthOfBit.push(1.5);
+		var table = [];
+		for(var i=0; i<line1.length; i++)
+		{
+			var resultsForOneValue = [x[i],line1[i],line2[i],line3[i],lengthOfBit[i]];
+			table.push(resultsForOneValue);
+		}	
+
+		data.addRows(table);
+
+		var options = {
+			chart: {
+			title: title,
+			subtitle: subtitle
+			},
+			width: widthOfGraph,
+			height: heightOfGraph,
+			series: {
+            0: { color: color },
+            1: { color: 'gray' },
+            2: { color: 'gray' },
+            3: { color: 'blue' },
+			}
+		};
+
+		var chart = new google.charts.Line(div);
+		chart.draw(data, google.charts.Line.convertOptions(options));
+    }
+
+	//συνάρτηση καθαρισμού αποτελέσματος
+	function clearResultsForOneCalculation(chart_div,together_div)
+	{
+		chart_div.innerHTML = "";
+		together_div.innerHTML = "";
+	}
+	
+	//συνάρτηση καθαρισμού αποτελεσμάτων
+	function clearResults()
+	{
+		var order = window.document.getElementById("order");
+		order.innerHTML = "";
+		
+		for(var div of together)
+			div.innerHTML = "";
+
+		for(var div of chart_divs)
+			div.innerHTML = "";
+	}
+	
+	//επαναφορά των πεδίων στις αρχικές τους τιμές
+	function clearFields()
+	{
+		window.location.reload(); 
+		clearResults();
+	}
+	
+</script>
+
+		</main>
+		<footer class="footer">
+			<span>Συστήματα επικοινωνιών 2020</span>
+		</footer>
+	</body>
+</html>
