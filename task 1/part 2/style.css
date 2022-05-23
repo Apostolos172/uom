@@ -12,6 +12,10 @@ html{
 	line-height: 200%;
 }
 
+.note{
+	color:red;
+}
+
 em{
 	color:blue;
 	font-weight:bold;
@@ -126,14 +130,13 @@ div.together{
 }
 
 .header, .main, .aside, .footer{
-	background-color:rgba(167, 290, 250, 0.83);
-	background-color:rgba(255,99,71,0.6);
+	background-color:rgba(127,255,0,0.6);
 	padding:20px;
 	transition:1s;
 }
 
 .header:hover, .main:hover, .aside:hover, .footer:hover{
-	background-color:rgba(255,99,71,0.8);
+	background-color:rgba(127,255,0,0.8);
 }
 
 /* for tables*/
