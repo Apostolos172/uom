@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width">
+		<meta charset="UTF-8">
+		<title>Virtual ask 4</title>
+		<link href="https://fonts.googleapis.com/css?family=Tangerine&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&display=swap" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+		<link href="style.css" rel="stylesheet">
+	</head>
+	<body class="grid-container">
+		<header class="header">
+			Virtual ask 4
+		</header>
+		<aside class="aside">
+			<a href="https://el.wikipedia.org/wiki/%CE%98%CE%B5%CF%89%CF%81%CE%AF%CE%B1_%CF%80%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%AF%CE%B1%CF%82" rel="noreferrer noopener" target="_blank">Θεωρία πληροφορίας</a>
+		</aside>
+		<main class="main">
+			<div>
+				<h2>Υπολογισμός του μέγιστου ρυθμού μετάδοσης <span>R</span> για εύρος τιμών της απόστασης <span>d</span></h2>
+				<p class="instructions">
+				Συμπήρωσε όλα τα πεδία με τα αντίστοιχα μεγέθη, δίνοντας και εύρος για <span>d</span> (σε <span>m</span>), ώστε με βάση αυτό
+				να υπολογιστεί ο μέγιστος ρυθμός μετάδοσης <span>R</span> σε κάθε περίπτωση.<br>
+				Ενδεικτικά υπάρχουν κάποιες προσυμπληρωμένες τιμές, οι οποίες μπορούν να τροποποιηθούν.
+				</p>
+				<br>
+				<form>
+				<label><em>Ι</em>σχύς σήματος από τον πομπό εκπομπής <span>P<sub>Transmitter</sub></span> σε 
+				<span><select><option>Watt</option><option class="mWatt" selected>mWatt</option></select></span> : <input id="PTransmitter" type="text"></label><br>
+				<label><em>Α</em>πόσταση μέτρησης της ισχύος εκπομπής <span>d<sub>0</sub></span> σε <span>m</span> : <input id="d0" type="text"></label><br>
+				<label><em>Ι</em>σχύς θορύβου <span>N</span> σε 
+				<span><select><option>Watt</option><option class="mWatt" selected>mWatt</option></select></span> : <input id="N" type="text"></label><br>
+				<label><em>Μ</em>ικρότερη συχνότητα λειτουργίας του καναλιού <span>f<sub>min</sub></span> σε <span>GHz</span> : <input id="fmin" type="text"></label><br>
+				<label><em>Μ</em>εγαλύτερη συχνότητα λειτουργίας του καναλιού <span>f<sub>max</sub></span> σε <span>GHz</span> : <input id="fmax" type="text"></label><br>
+				<label><em>Α</em>ρχική τιμή για την απόσταση στην οποία βρίσκεται ο δέκτης <span>d<sub>initial</sub></span> σε <span>m</span> : <input id="dinitial" type="text"></label><br>
+				<label><em>Τ</em>ελική τιμή για την απόσταση στην οποία βρίσκεται ο δέκτης <span>d<sub>final</sub></span> σε <span>m</span> : <input id="dfinal" type="text"></label><br>
+				<label><em>Β</em>ήμα για τις αλλαγές της απόστασης του δέκτη από τον πομπό (κεραία) : <input id="step" type="text"></label><br>
+				</form>
+				<br>
+				<p class="instructions">
+				Πάτησε το επόμενο κουμπί για να πάρεις τα αποτελέσματα τόσο σε πίνακα όσο και σε μορφή διαγράμματος
+				</p>
+				<br>
+				<button id="calculate">Υπολόγισε και δημιούργησε γράφημα</button>
+				<button id="deleteResults">Καθάρισε τα αποτελέσματα</button>
+				<button id="deleteFields">Επανάφερε τις ενδεικτικές τιμές στα πεδία</button>
+				<br><br>
+				<table>
+					<tbody id="horizontal_table">
+					<tr><th>d (m)</th></tr>
+					<tr><th>max R (Mbps)</th></tr>
+					</tbody>
+					<tbody id="vertical_table">
+					<tbody>
+				</table>
+				<br>
+				<div id="chart_div"></div>
+			</div>
+			
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="src.js"></script>
+
+		</main>
+		<footer class="footer">
+			<span>Συστήματα επικοινωνιών 2020</span>
+		</footer>
+	</body>
+</html>
