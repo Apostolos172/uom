@@ -76,7 +76,7 @@ public class Customer {
 	
 	public void printData()
 	{
-		// σε κάθε κλάση 
+		// σε κάθε κλάση  
 		// εμφανίζει τις τιμές των ιδιοτήτων κάθε αντικειμένου.
 		
 		System.out.format("*     %-23s|   %s   |   %15s %3s\n", this.name, this.afm, this.address, "*");
