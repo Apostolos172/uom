@@ -4,7 +4,7 @@ This repository includes the most of my exercises in the lesson of systems of co
 
 You can see live some of the above tasks in the following links:
 
-1. [Task 1 (Part 1)](http://19172.byethost11.com/mysite/projects/virtualask1a.html)
+1. <a href="http://19172.byethost11.com/mysite/projects/virtualask1a.html" target="_blank">Task 1 (Part 1)</a>
 
 2. [Task 1 (Part 2)](http://19172.byethost11.com/mysite/projects/virtualask1b.html)
 
