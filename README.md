@@ -1,6 +1,6 @@
 # UoM
 
-This repository includes the most of my university exercises.
+This repository includes some of my university exercises.
 
 Interesting projects in this repository:
 
