@@ -20,13 +20,13 @@ public class JamOrder {
 	
 	public void printData()
 	{
-		// σε κάθε κλάση 
-		// εμφανίζει τις τιμές των ιδιοτήτων κάθε αντικειμένου.
-		System.out.println("\n* * * * Έναρξη  Παραγγελίας * * * *\n");
-		System.out.println("      Πελάτης: " + this.customer.getName());
-		jamCatalogForOrder.printData();
-		
-		System.out.println("\n* * * *  Τέλος Παραγγελίας  * * * *");
+        // ΟƒΞµ ΞΊΞ¬ΞΈΞµ ΞΊΞ»Ξ¬ΟƒΞ· 
+        // ΞµΞΌΟ†Ξ±Ξ½Ξ―Ξ¶ΞµΞΉ Ο„ΞΉΟ‚ Ο„ΞΉΞΌΞ­Ο‚ Ο„Ο‰Ξ½ ΞΉΞ΄ΞΉΞΏΟ„Ξ®Ο„Ο‰Ξ½ ΞΊΞ¬ΞΈΞµ Ξ±Ξ½Ο„ΞΉΞΊΞµΞΉΞΌΞ­Ξ½ΞΏΟ….
+        System.out.println("\n* * * * ΞΞ½Ξ±ΟΞΎΞ·  Ξ Ξ±ΟΞ±Ξ³Ξ³ΞµΞ»Ξ―Ξ±Ο‚ * * * *\n");
+        System.out.println("      Ξ ΞµΞ»Ξ¬Ο„Ξ·Ο‚: " + this.customer.getName());
+        jamCatalogForOrder.printData();
+        
+        System.out.println("\n* * * *  Ξ¤Ξ­Ξ»ΞΏΟ‚ Ξ Ξ±ΟΞ±Ξ³Ξ³ΞµΞ»Ξ―Ξ±Ο‚  * * * *");
 		
 	}
 }

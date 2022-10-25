@@ -2,7 +2,7 @@ public class App {
 
     public static void main(String[] args) {
 		
-		int numberRandomNumbers = 1000000; // � 1000000
+		int numberRandomNumbers = 1000000;
 		long m = (long) Math.pow(2,31);
 		int Zo = 4534;
 		System.out.println(m);
@@ -13,7 +13,7 @@ public class App {
 		double Ui = (double) Zi/m;
 		System.out.println("number 1: " + Ui);
 		
-		// ���� ��������
+		// Test Περιοχών
 		int region01, region02, region03, region04, region05, region06, region07, 
 		region08, region09, region10;
 		region01 = region02 = region03 = region04 = region05 = region06 = region07 = 
@@ -40,7 +40,7 @@ public class App {
 		else
 			region10++;
 		
-		// ������� ����
+		// έλεγχοι ροών
 		int[] runs = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 /*
 		int run1, run2, run3, run4, run5, run6, run7, 

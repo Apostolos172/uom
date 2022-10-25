@@ -1,17 +1,16 @@
-// https://www.programiz.com/java-programming/examples/standard-deviation
 
 public class AppNo1 {
 
 	public static void main(String[] args) {
 		
-		int numberRandomNumbers = 100; // � 1000000
+		int numberRandomNumbers = 100; // ή 1000000
 		double m = Math.pow(2,31);
 		double Zo = 75391;
 		
 		double Z1 = RandomNumberGenerator(m, Zo);
 		double Zi = Z1;
 		double Ui = Zi/m;
-		System.out.println("number 1:" + Ui);
+		System.out.println("number 1: " + Ui);
 		
 		double sum = Ui;
 		double sum2 = Ui;
