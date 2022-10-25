@@ -30,7 +30,7 @@ public class Registry {
 	public void addSuspect(Suspect aSuspect)
 	{
 		/*
-		 * Μέθοδος addSuspect(Suspect aSuspect) καταχώρησης ενός υπόπτου.
+		 * ΞΞ­ΞΈΞΏΞ΄ΞΏΟ‚ addSuspect(Suspect aSuspect) ΞΊΞ±Ο„Ξ±Ο‡ΟΟΞ·ΟƒΞ·Ο‚ ΞµΞ½ΟΟ‚ Ο…Ο€ΟΟ€Ο„ΞΏΟ….
 		 */
 		suspects.add(aSuspect);
 	}
@@ -38,8 +38,8 @@ public class Registry {
 	public Suspect find_whose_phone(String a_phone_number)
 	{
 		/*
-		 * Μέθοδος find_whose_phone(String a_phone_number) που εντοπίζει τον ύποπτο, ο οποίος κατέχει
-		 * το δεδομένο τηλεφωνικό αριθμό.
+		 * ΞΞ­ΞΈΞΏΞ΄ΞΏΟ‚ find_whose_phone(String a_phone_number) Ο€ΞΏΟ… ΞµΞ½Ο„ΞΏΟ€Ξ―Ξ¶ΞµΞΉ Ο„ΞΏΞ½ ΟΟ€ΞΏΟ€Ο„ΞΏ, ΞΏ ΞΏΟ€ΞΏΞ―ΞΏΟ‚ ΞΊΞ±Ο„Ξ­Ο‡ΞµΞΉ
+		 * Ο„ΞΏ Ξ΄ΞµΞ΄ΞΏΞΌΞ­Ξ½ΞΏ Ο„Ξ·Ξ»ΞµΟ†Ο‰Ξ½ΞΉΞΊΟ Ξ±ΟΞΉΞΈΞΌΟ.
 		 */
 		for(Suspect s: suspects)
 		{
@@ -54,10 +54,10 @@ public class Registry {
 	public void addCommunication(Communication aCommunication)
 	{
 		/*
-		 * Μέθοδος addCommunication(Communication aCommunication) καταχώρησης μιας νέας 
-		 * επικοινωνίας. Αν η επικοινωνία αφορά τους τηλεφωνικούς αριθμούς Telephone_number_1
-		 * και Telephone_number_2, τότε στους υπόπτους που διαθέτουν τους αντίστοιχους αριθμούς 
-		 * ενημερώνεται η λίστα των συνεργατών τους.
+		 * ΞΞ­ΞΈΞΏΞ΄ΞΏΟ‚ addCommunication(Communication aCommunication) ΞΊΞ±Ο„Ξ±Ο‡ΟΟΞ·ΟƒΞ·Ο‚ ΞΌΞΉΞ±Ο‚ Ξ½Ξ­Ξ±Ο‚ 
+		 * ΞµΟ€ΞΉΞΊΞΏΞΉΞ½Ο‰Ξ½Ξ―Ξ±Ο‚. Ξ‘Ξ½ Ξ· ΞµΟ€ΞΉΞΊΞΏΞΉΞ½Ο‰Ξ½Ξ―Ξ± Ξ±Ο†ΞΏΟΞ¬ Ο„ΞΏΟ…Ο‚ Ο„Ξ·Ξ»ΞµΟ†Ο‰Ξ½ΞΉΞΊΞΏΟΟ‚ Ξ±ΟΞΉΞΈΞΌΞΏΟΟ‚ Telephone_number_1
+		 * ΞΊΞ±ΞΉ Telephone_number_2, Ο„ΟΟ„Ξµ ΟƒΟ„ΞΏΟ…Ο‚ Ο…Ο€ΟΟ€Ο„ΞΏΟ…Ο‚ Ο€ΞΏΟ… Ξ΄ΞΉΞ±ΞΈΞ­Ο„ΞΏΟ…Ξ½ Ο„ΞΏΟ…Ο‚ Ξ±Ξ½Ο„Ξ―ΟƒΟ„ΞΏΞΉΟ‡ΞΏΟ…Ο‚ Ξ±ΟΞΉΞΈΞΌΞΏΟΟ‚ 
+		 * ΞµΞ½Ξ·ΞΌΞµΟΟΞ½ΞµΟ„Ξ±ΞΉ Ξ· Ξ»Ξ―ΟƒΟ„Ξ± Ο„Ο‰Ξ½ ΟƒΟ…Ξ½ΞµΟΞ³Ξ±Ο„ΟΞ½ Ο„ΞΏΟ…Ο‚.
 		 */
 		
 		this.communications[counter]= aCommunication;
@@ -76,8 +76,8 @@ public class Registry {
 	public Suspect getSuspectWithMostPartners()
 	{
 		/*
-		 * Μέθοδος getSuspectWithMostPartners() η οποία επιστρέφει έναν 
-		 * από τους υπόπτους με τους περισσότερους πιθανούς συνεργάτες.
+		 * ΞΞ­ΞΈΞΏΞ΄ΞΏΟ‚ getSuspectWithMostPartners() Ξ· ΞΏΟ€ΞΏΞ―Ξ± ΞµΟ€ΞΉΟƒΟ„ΟΞ­Ο†ΞµΞΉ Ξ­Ξ½Ξ±Ξ½ 
+		 * Ξ±Ο€Ο Ο„ΞΏΟ…Ο‚ Ο…Ο€ΟΟ€Ο„ΞΏΟ…Ο‚ ΞΌΞµ Ο„ΞΏΟ…Ο‚ Ο€ΞµΟΞΉΟƒΟƒΟΟ„ΞµΟΞΏΟ…Ο‚ Ο€ΞΉΞΈΞ±Ξ½ΞΏΟΟ‚ ΟƒΟ…Ξ½ΞµΟΞ³Ξ¬Ο„ΞµΟ‚.
 		 */
 		Suspect SuspectWithMostPartners= suspects.get(0);
 		for(Suspect s: suspects)
@@ -91,9 +91,9 @@ public class Registry {
 	public PhoneCall getLongestPhoneCallBetween(String number1, String number2)
 	{
 		/*
-		 * Μέθοδος getLongestPhoneCallBetween(String number1, String number2) η οποία δέχεται 
-		 * ως παράμετρο δύο αριθμούς και επιστρέφει την τηλεφωνική κλήση μεταξύ τους με τη 
-		 * μεγαλύτερη διάρκεια.
+		 * ΞΞ­ΞΈΞΏΞ΄ΞΏΟ‚ getLongestPhoneCallBetween(String number1, String number2) Ξ· ΞΏΟ€ΞΏΞ―Ξ± Ξ΄Ξ­Ο‡ΞµΟ„Ξ±ΞΉ 
+		 * Ο‰Ο‚ Ο€Ξ±ΟΞ¬ΞΌΞµΟ„ΟΞΏ Ξ΄ΟΞΏ Ξ±ΟΞΉΞΈΞΌΞΏΟΟ‚ ΞΊΞ±ΞΉ ΞµΟ€ΞΉΟƒΟ„ΟΞ­Ο†ΞµΞΉ Ο„Ξ·Ξ½ Ο„Ξ·Ξ»ΞµΟ†Ο‰Ξ½ΞΉΞΊΞ® ΞΊΞ»Ξ®ΟƒΞ· ΞΌΞµΟ„Ξ±ΞΎΟ Ο„ΞΏΟ…Ο‚ ΞΌΞµ Ο„Ξ· 
+		 * ΞΌΞµΞ³Ξ±Ξ»ΟΟ„ΞµΟΞ· Ξ΄ΞΉΞ¬ΟΞΊΞµΞΉΞ±.
 		 */
 		ArrayList<Communication> communicatiosWithTheParticularNumbers = new ArrayList<>();
 		
@@ -126,9 +126,9 @@ public class Registry {
 	public ArrayList<SMS> getMessagesBetween(String number1, String number2)
 	{
 		/*
-		 * Μέθοδος getMessagesBetween(String number1, String number2) η οποία δέχεται ως 
-		 * παράμετρο δύο αριθμούς και επιστρέφει όλα τα μηνύματα μεταξύ τους που περιέχουν 
-		 * οποιαδήποτε από τις λέξεις “Bomb”, “Attack”, “Explosives”, “Gun”.
+		 * ΞΞ­ΞΈΞΏΞ΄ΞΏΟ‚ getMessagesBetween(String number1, String number2) Ξ· ΞΏΟ€ΞΏΞ―Ξ± Ξ΄Ξ­Ο‡ΞµΟ„Ξ±ΞΉ Ο‰Ο‚ 
+		 * Ο€Ξ±ΟΞ¬ΞΌΞµΟ„ΟΞΏ Ξ΄ΟΞΏ Ξ±ΟΞΉΞΈΞΌΞΏΟΟ‚ ΞΊΞ±ΞΉ ΞµΟ€ΞΉΟƒΟ„ΟΞ­Ο†ΞµΞΉ ΟΞ»Ξ± Ο„Ξ± ΞΌΞ·Ξ½ΟΞΌΞ±Ο„Ξ± ΞΌΞµΟ„Ξ±ΞΎΟ Ο„ΞΏΟ…Ο‚ Ο€ΞΏΟ… Ο€ΞµΟΞΉΞ­Ο‡ΞΏΟ…Ξ½ 
+		 * ΞΏΟ€ΞΏΞΉΞ±Ξ΄Ξ®Ο€ΞΏΟ„Ξµ Ξ±Ο€Ο Ο„ΞΉΟ‚ Ξ»Ξ­ΞΎΞµΞΉΟ‚ β€Bombβ€, β€Attackβ€, β€Explosivesβ€, β€Gunβ€.
 		 */
 		ArrayList<SMS> sms = new ArrayList<>();
 		
@@ -156,10 +156,10 @@ public class Registry {
 	public ArrayList<String> getMessagesWith(String number, Suspect aSuspect)
 	{
 		/*
-		 * Μέθοδος getMessagesWith(String number, Suspect aSuspect) η οποία δέχεται ως 
-		 * παράμετρο έναν τηλεφωνικό αριθμό και έναν ύποπτο και επιστρέφει όλα τα περιεχόμενα των μηνυμάτων 
-		 * μεταξύ του αριθμού και των τηλεφώνων του υπόπτου που περιέχουν 
-		 * οποιαδήποτε από τις λέξεις “Bomb”, “Attack”, “Explosives”, “Gun”.
+		 * ΞΞ­ΞΈΞΏΞ΄ΞΏΟ‚ getMessagesWith(String number, Suspect aSuspect) Ξ· ΞΏΟ€ΞΏΞ―Ξ± Ξ΄Ξ­Ο‡ΞµΟ„Ξ±ΞΉ Ο‰Ο‚ 
+		 * Ο€Ξ±ΟΞ¬ΞΌΞµΟ„ΟΞΏ Ξ­Ξ½Ξ±Ξ½ Ο„Ξ·Ξ»ΞµΟ†Ο‰Ξ½ΞΉΞΊΟ Ξ±ΟΞΉΞΈΞΌΟ ΞΊΞ±ΞΉ Ξ­Ξ½Ξ±Ξ½ ΟΟ€ΞΏΟ€Ο„ΞΏ ΞΊΞ±ΞΉ ΞµΟ€ΞΉΟƒΟ„ΟΞ­Ο†ΞµΞΉ ΟΞ»Ξ± Ο„Ξ± Ο€ΞµΟΞΉΞµΟ‡ΟΞΌΞµΞ½Ξ± Ο„Ο‰Ξ½ ΞΌΞ·Ξ½Ο…ΞΌΞ¬Ο„Ο‰Ξ½ 
+		 * ΞΌΞµΟ„Ξ±ΞΎΟ Ο„ΞΏΟ… Ξ±ΟΞΉΞΈΞΌΞΏΟ ΞΊΞ±ΞΉ Ο„Ο‰Ξ½ Ο„Ξ·Ξ»ΞµΟ†ΟΞ½Ο‰Ξ½ Ο„ΞΏΟ… Ο…Ο€ΟΟ€Ο„ΞΏΟ… Ο€ΞΏΟ… Ο€ΞµΟΞΉΞ­Ο‡ΞΏΟ…Ξ½ 
+		 * ΞΏΟ€ΞΏΞΉΞ±Ξ΄Ξ®Ο€ΞΏΟ„Ξµ Ξ±Ο€Ο Ο„ΞΉΟ‚ Ξ»Ξ­ΞΎΞµΞΉΟ‚ β€Bombβ€, β€Attackβ€, β€Explosivesβ€, β€Gunβ€.
 		 */
 		
 		ArrayList<String> content_of_smses = new ArrayList<>();
@@ -180,8 +180,8 @@ public class Registry {
 	public void printSuspectsFromCountry(String country) 
 	{
 		/*
-		 * Μέθοδος getSuspectsFromCountry(String country) η οποία δέχεται ως παράμετρο το όνομα μιας 
-		 * χώρας και εμφανίζει όλους τους υπόπτους που κατάγονται από αυτή
+		 * ΞΞ­ΞΈΞΏΞ΄ΞΏΟ‚ getSuspectsFromCountry(String country) Ξ· ΞΏΟ€ΞΏΞ―Ξ± Ξ΄Ξ­Ο‡ΞµΟ„Ξ±ΞΉ Ο‰Ο‚ Ο€Ξ±ΟΞ¬ΞΌΞµΟ„ΟΞΏ Ο„ΞΏ ΟΞ½ΞΏΞΌΞ± ΞΌΞΉΞ±Ο‚ 
+		 * Ο‡ΟΟΞ±Ο‚ ΞΊΞ±ΞΉ ΞµΞΌΟ†Ξ±Ξ½Ξ―Ξ¶ΞµΞΉ ΟΞ»ΞΏΟ…Ο‚ Ο„ΞΏΟ…Ο‚ Ο…Ο€ΟΟ€Ο„ΞΏΟ…Ο‚ Ο€ΞΏΟ… ΞΊΞ±Ο„Ξ¬Ξ³ΞΏΞ½Ο„Ξ±ΞΉ Ξ±Ο€Ο Ξ±Ο…Ο„Ξ®
 		 */
 		for(Suspect s: suspects)
 		{

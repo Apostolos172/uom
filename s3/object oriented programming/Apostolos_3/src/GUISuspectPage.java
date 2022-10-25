@@ -6,17 +6,17 @@ import javax.swing.border.Border;
 import java.util.ArrayList;
 
 public class GUISuspectPage extends JFrame{
-	//panel το κεντρικό panel του παραθύρου
+	//panel Ο„ΞΏ ΞΊΞµΞ½Ο„ΟΞΉΞΊΟ panel Ο„ΞΏΟ… Ο€Ξ±ΟΞ±ΞΈΟΟΞΏΟ…
 	private JPanel panel;
     private ImageIcon image;
     private JLabel imageLabel;
-    //centralPanel υποπάνελ του panel
+    //centralPanel Ο…Ο€ΞΏΟ€Ξ¬Ξ½ΞµΞ» Ο„ΞΏΟ… panel
     private JPanel centralPanel;
-	//panel1 υποπάνελ του centralPanel
+	//panel1 Ο…Ο€ΞΏΟ€Ξ¬Ξ½ΞµΞ» Ο„ΞΏΟ… centralPanel
 	private JPanel panel1;
 	private JTextField suspectName,suspectCodeName;
 	private JList<String> suspectTelephones;
-	//panel2 υποπάνελ του centralPanel
+	//panel2 Ο…Ο€ΞΏΟ€Ξ¬Ξ½ΞµΞ» Ο„ΞΏΟ… centralPanel
 	private JPanel panel2;
 	private JPanel subpanel;
 	private JButton buttonClear;
@@ -25,18 +25,18 @@ public class GUISuspectPage extends JFrame{
 	private JTextArea messages;
 	private JScrollPane ScrollPaneMessages;
 	private JButton buttonFindSMS;
-	//panel3 υποπάνελ του centralPanel
+	//panel3 Ο…Ο€ΞΏΟ€Ξ¬Ξ½ΞµΞ» Ο„ΞΏΟ… centralPanel
 	private JPanel panel3;
 	private JLabel partners;
 	private JTextArea names;
-	//panel4 υποπάνελ του centralPanel
+	//panel4 Ο…Ο€ΞΏΟ€Ξ¬Ξ½ΞµΞ» Ο„ΞΏΟ… centralPanel
 	private JPanel panel4;
 	private JTextField suggestedPartners;
 	private JTextArea namesOnly;
-	//panel5 υποπάνελ του centralPanel
+	//panel5 Ο…Ο€ΞΏΟ€Ξ¬Ξ½ΞµΞ» Ο„ΞΏΟ… centralPanel
 	private JPanel panel5;
 	private JTextArea compatriots;
-	//southPanel υποπάνελ του panel
+	//southPanel Ο…Ο€ΞΏΟ€Ξ¬Ξ½ΞµΞ» Ο„ΞΏΟ… panel
 	private JPanel southPanel;
 	private JButton buttonReturn;
     

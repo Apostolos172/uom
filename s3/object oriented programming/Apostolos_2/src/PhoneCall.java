@@ -16,13 +16,13 @@ public class PhoneCall extends Communication{
 		return duration;
 	}
 	
-	//Μέθοδος που επιστρέφει τον τύπο της επικοινωνίας
+	//ΞΞ­ΞΈΞΏΞ΄ΞΏΟ‚ Ο€ΞΏΟ… ΞµΟ€ΞΉΟƒΟ„ΟΞ­Ο†ΞµΞΉ Ο„ΞΏΞ½ Ο„ΟΟ€ΞΏ Ο„Ξ·Ο‚ ΞµΟ€ΞΉΞΊΞΏΞΉΞ½Ο‰Ξ½Ξ―Ξ±Ο‚
 	public String getType()
 	{
 		return("PhoneCall");
 	}
 	
-	//Μέθοδος printInfo() εκτύπωσης όλων των ιδιοτήτων των επικοινωνιών
+	//ΞΞ­ΞΈΞΏΞ΄ΞΏΟ‚ printInfo() ΞµΞΊΟ„ΟΟ€Ο‰ΟƒΞ·Ο‚ ΟΞ»Ο‰Ξ½ Ο„Ο‰Ξ½ ΞΉΞ΄ΞΉΞΏΟ„Ξ®Ο„Ο‰Ξ½ Ο„Ο‰Ξ½ ΞµΟ€ΞΉΞΊΞΏΞΉΞ½Ο‰Ξ½ΞΉΟΞ½
 	public void printInfo()
 	{
 		System.out.println("This phone call has the following info");
