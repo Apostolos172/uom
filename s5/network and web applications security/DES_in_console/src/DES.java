@@ -222,12 +222,12 @@ public class DES {
 		temp = permutation(P, temp); 
 		// xor 
 		left = xor(left, temp); 
-		System.out.println("Round "
-						+ (num + 1) + "    αριστερή νέα υποδέσμη:"
-						+ right.toUpperCase() 
-						+ " δεξιά νέα υποδέσμη:" + left.toUpperCase() 
-						+ " υποκλειδί της ανακύκλωσης:"
-						+ key.toUpperCase()); 
+        System.out.println("Round "
+                + (num + 1) + "    Ξ±ΟΞΉΟƒΟ„ΞµΟΞ® Ξ½Ξ­Ξ± Ο…Ο€ΞΏΞ΄Ξ­ΟƒΞΌΞ·:"
+                + right.toUpperCase() 
+                + " Ξ΄ΞµΞΎΞΉΞ¬ Ξ½Ξ­Ξ± Ο…Ο€ΞΏΞ΄Ξ­ΟƒΞΌΞ·:" + left.toUpperCase() 
+                + " Ο…Ο€ΞΏΞΊΞ»ΞµΞΉΞ΄Ξ― Ο„Ξ·Ο‚ Ξ±Ξ½Ξ±ΞΊΟΞΊΞ»Ο‰ΟƒΞ·Ο‚:"
+                + key.toUpperCase()); 
 		// swapper 
 		return right + left; 
 	} 

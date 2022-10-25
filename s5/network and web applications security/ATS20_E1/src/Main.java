@@ -2,15 +2,9 @@
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-		//https://www.geeksforgeeks.org/vigenere-cipher/
-		
-		String str = "VADRAHAN"; 
+
+	    String str = "VADRAHAN"; 
 	    String keyword = "SOLO"; 
-	    
-	    //str = "GEEKSFORGEEKS"; 
-	    //keyword = "AYUSH"; 
 	  
 	    String key = Vigenere.generateKey(str, keyword); 
 	    System.out.println("key=" + key);

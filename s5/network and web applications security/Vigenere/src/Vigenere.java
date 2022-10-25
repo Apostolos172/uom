@@ -57,23 +57,23 @@ public class Vigenere {
 	    return orig_text; 
 	}  
 	
-	// Αυτή η συνάρτηση δοκιμάζει αν πέτυχε το κλειδί, κρυπτανάλυση
-	// και επιστρέφει αν ήταν πετυχημένη η κρυπτανάλυση
-	public static boolean cryptanalysis(String keyword, String original_text, String cipher_text)
+    // Ξ‘Ο…Ο„Ξ® Ξ· ΟƒΟ…Ξ½Ξ¬ΟΟ„Ξ·ΟƒΞ· Ξ΄ΞΏΞΊΞΉΞΌΞ¬Ξ¶ΞµΞΉ Ξ±Ξ½ Ο€Ξ­Ο„Ο…Ο‡Ξµ Ο„ΞΏ ΞΊΞ»ΞµΞΉΞ΄Ξ―, ΞΊΟΟ…Ο€Ο„Ξ±Ξ½Ξ¬Ξ»Ο…ΟƒΞ·
+    // ΞΊΞ±ΞΉ ΞµΟ€ΞΉΟƒΟ„ΟΞ­Ο†ΞµΞΉ Ξ±Ξ½ Ξ®Ο„Ξ±Ξ½ Ο€ΞµΟ„Ο…Ο‡Ξ·ΞΌΞ­Ξ½Ξ· Ξ· ΞΊΟΟ…Ο€Ο„Ξ±Ξ½Ξ¬Ξ»Ο…ΟƒΞ·
+    public static boolean cryptanalysis(String keyword, String original_text, String cipher_text)
     {
-    	// Εύρεση πλήρους κλειδιού, με το ίδιο μήκος του αρχικού κειμένου
-		String key = Vigenere.generateKey(original_text, keyword); 
+        // Ξ•ΟΟΞµΟƒΞ· Ο€Ξ»Ξ®ΟΞΏΟ…Ο‚ ΞΊΞ»ΞµΞΉΞ΄ΞΉΞΏΟ, ΞΌΞµ Ο„ΞΏ Ξ―Ξ΄ΞΉΞΏ ΞΌΞ®ΞΊΞΏΟ‚ Ο„ΞΏΟ… Ξ±ΟΟ‡ΞΉΞΊΞΏΟ ΞΊΞµΞΉΞΌΞ­Ξ½ΞΏΟ…
+        String key = Vigenere.generateKey(original_text, keyword); 
         //System.out.println(" "+key);
-	  
-        // Αποκρυπτογράφηση
+      
+        // Ξ‘Ο€ΞΏΞΊΟΟ…Ο€Ο„ΞΏΞ³ΟΞ¬Ο†Ξ·ΟƒΞ·
         String orig = Vigenere.originalText(cipher_text, key);
-	    //System.out.println("Original/Decrypted Text : " + orig);
-	    
-	    // Έλεγχος αν είναι το κείμενο που προέκυψε με το δεδομένο κλειδί ίδιο με το αρχικό κείμενο
-	    boolean successful_cryptanalysis = orig.equals(original_text); 
-	    //equals return true if the two strings are the same
-	    return successful_cryptanalysis;
-	    
+        //System.out.println("Original/Decrypted Text : " + orig);
+        
+        // ΞΞ»ΞµΞ³Ο‡ΞΏΟ‚ Ξ±Ξ½ ΞµΞ―Ξ½Ξ±ΞΉ Ο„ΞΏ ΞΊΞµΞ―ΞΌΞµΞ½ΞΏ Ο€ΞΏΟ… Ο€ΟΞΏΞ­ΞΊΟ…ΟΞµ ΞΌΞµ Ο„ΞΏ Ξ΄ΞµΞ΄ΞΏΞΌΞ­Ξ½ΞΏ ΞΊΞ»ΞµΞΉΞ΄Ξ― Ξ―Ξ΄ΞΉΞΏ ΞΌΞµ Ο„ΞΏ Ξ±ΟΟ‡ΞΉΞΊΟ ΞΊΞµΞ―ΞΌΞµΞ½ΞΏ
+        boolean successful_cryptanalysis = orig.equals(original_text); 
+        //equals return true if the two strings are the same
+        return successful_cryptanalysis;
+        
     }
 	
 	 public static int printTheNextPossibleCombinationAndDoCryptanalysis(char[] values, int r, int[] output, int count, String str, String cipher_text)
